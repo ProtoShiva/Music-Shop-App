@@ -17,6 +17,7 @@ export function UserContextProvider({ children }) {
   const [minPrice, setMinPrice] = useState("")
   const [maxPrice, setMaxPrice] = useState("")
   const [sort, setSort] = useState("")
+  const [showFeedback, setShowFeedback] = useState(false)
 
   // const [page,setPage] = useState(1)
 
@@ -138,7 +139,9 @@ export function UserContextProvider({ children }) {
         setMinPrice,
         setCompany,
         setSort,
-        clearCart
+        clearCart,
+        showFeedback,
+        setShowFeedback
       }}
     >
       {children}

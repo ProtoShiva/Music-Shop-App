@@ -1,8 +1,12 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { RiArrowDropDownLine } from "react-icons/ri"
 import style from "./FeedBack.module.css"
 import axios from "axios"
+import { UserContext } from "../../context/UserContext"
+import { useSelector } from "react-redux"
 const FeedBack = ({ dropdownRef }) => {
+  const { showFeedback, setShowFeedback } = useContext(UserContext)
+  const currentUser = useSelector((state) => state.user.currentUser)
   const [open, setOpen] = useState(false)
   // const [buttonOpen, setButtonOpen] = useState(false)
   const [errors, setErrors] = useState("")
@@ -31,6 +35,7 @@ const FeedBack = ({ dropdownRef }) => {
           feedbackType,
           feedback
         })
+        setShowFeedback(!showFeedback)
         return data
       } catch (error) {
         console.log(error)

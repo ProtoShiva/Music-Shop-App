@@ -17,10 +17,15 @@ import FeedBack from "../../components/FeedBack/FeedBack"
 import { useSelector } from "react-redux"
 
 const HomePage = () => {
-  const { products, isGridView, setIsGridView, setSearch } =
-    useContext(UserContext)
+  const {
+    products,
+    isGridView,
+    setIsGridView,
+    setSearch,
+    showFeedback,
+    setShowFeedback
+  } = useContext(UserContext)
   const currentUser = useSelector((state) => state.user.currentUser)
-  const [showFeedback, setShowFeedback] = useState(false)
 
   const tabNames = ["Headphone type", "Company", "Color", "Price", "Sorted by:"]
   const node = useRef()

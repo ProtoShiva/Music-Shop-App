@@ -208,7 +208,7 @@ const CheckOutPage = () => {
         <div className={style.placeOrder}>
           <div className={style.main_container}>
             <div className={style.upper}>
-              <button>Place your Order</button>
+              <button onClick={handleSubmit}>Place your Order</button>
               <p>
                 By placing order, you agree to Musicart privacy notice and
                 conditions or use
